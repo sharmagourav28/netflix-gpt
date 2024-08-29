@@ -1,0 +1,10 @@
+we create react app
+configured tailwind css with us
+
+features:
+    1. browse page we have a header main movie we have a trailor in  
+    background then we have moviw title and descriptions at downs we have movies list and movie suggeston.
+
+    2.login/signup form onces you login it will redirect to  browse page.
+
+    3. nextflixgpt have search bar  that give movie suggestion
