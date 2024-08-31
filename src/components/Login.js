@@ -20,24 +20,18 @@ const Login = () => {
   };
 
   const handleButtonClick = () => {
-    const msg = checkValidData(
-      email.current.value,
-      password.current.value,
-      name.current.value
-    );
+    const emailValue = email.current?.value || "";
+    const passwordValue = password.current?.value || "";
+    const nameValue = name.current?.value || "";
+
+    const msg = checkValidData(emailValue, passwordValue, nameValue);
     setErrorMessage(msg);
     toast(msg);
 
-    // sign in or signup form
     if (!isSignInForm) {
-      // sign up logic
-      createUserWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value
-      )
+      // Sign up logic
+      createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
-          // Signed up
           const user = userCredential.user;
           console.log(user);
         })
@@ -47,16 +41,10 @@ const Login = () => {
           setErrorMessage(errorCode + "+" + errorMessage);
         });
     } else {
-      // signIn logic
-      signInWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value
-      )
+      // Sign in logic
+      signInWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
-          // Signed in
           const user = userCredential.user;
-          // ...
           console.log(user);
         })
         .catch((error) => {
