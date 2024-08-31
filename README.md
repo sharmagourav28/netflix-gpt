@@ -14,3 +14,4 @@
     - created a first user sign up in firebase
     - Implement sign in user API
     - created a redux store with userSlice
+    - signout & photoURL was also done
